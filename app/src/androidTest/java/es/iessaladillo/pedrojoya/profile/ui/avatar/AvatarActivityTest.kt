@@ -44,7 +44,7 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChangeSelectionWhenImageView1Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar1, R.id.chkAvatar1)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar1, R.id.chkAvatar2)
     }
 
     @Test
@@ -52,7 +52,7 @@ class AvatarActivityTest {
         onView(withId(R.id.imgAvatar1)).perform(click())
         onView(withId(R.id.imgAvatar2)).perform(click())
         onView(withId(R.id.chkAvatar2)).check(matches(isChecked()))
-        onView(withId(R.id.chkAvatar1)).check(matches(not<View>(isChecked())))
+        onView(withId(R.id.chkAvatar2)).check(matches(not<View>(isChecked())))
     }
 
     @Test
@@ -92,7 +92,7 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChangeSelectionWhenTextView1Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar1, R.id.chkAvatar1)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar1, R.id.chkAvatar2)
     }
 
     @Test
@@ -100,7 +100,7 @@ class AvatarActivityTest {
         onView(withId(R.id.lblAvatar1)).perform(click())
         onView(withId(R.id.lblAvatar2)).perform(click())
         onView(withId(R.id.chkAvatar2)).check(matches(isChecked()))
-        onView(withId(R.id.chkAvatar1)).check(matches(not<View>(isChecked())))
+        onView(withId(R.id.chkAvatar2)).check(matches(not<View>(isChecked())))
     }
 
     @Test
@@ -146,7 +146,7 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChkAvatar1KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar1)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar2)
     }
 
     @Test

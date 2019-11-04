@@ -1,28 +1,127 @@
 package es.iessaladillo.pedrojoya.profile.ui.main
 
 import android.app.Activity
+import android.app.SearchManager
 import android.content.Intent
+import android.content.Intent.EXTRA_EMAIL
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import es.iessaladillo.pedrojoya.profile.R
-import es.iessaladillo.pedrojoya.profile.data.local.entity.Avatar
+import es.iessaladillo.pedrojoya.profile.data.local.Database
 import es.iessaladillo.pedrojoya.profile.ui.avatar.AvatarActivity
-import es.iessaladillo.pedrojoya.profile.utils.*
-import kotlinx.android.synthetic.main.profile_activity.*
+import es.iessaladillo.pedrojoya.profile.ui.avatar.AvatarActivity.Companion.EXTRA_AVATAR
+import es.iessaladillo.pedrojoya.profile.utils.isValidEmail
+import es.iessaladillo.pedrojoya.profile.utils.isValidPhone
+import es.iessaladillo.pedrojoya.profile.utils.isValidUrl
 import kotlinx.android.synthetic.main.profile_avatar.*
 import kotlinx.android.synthetic.main.profile_form.*
 
 class ProfileActivity : AppCompatActivity() {
+    private val REQUEST_AVATAR = 1
+    private val viewModel by lazy {
+        ViewModelProvider(this)
+            .get(ProfileActivityViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.profile_activity)
-        // TODO
+        setAvatar()
+        setForm()
+        setClickListeners()
     }
+
+    private fun setClickListeners() {
+        lblAvatar.setOnClickListener { goToAvatarActivity() }
+        imgAvatar.setOnClickListener { goToAvatarActivity() }
+        imgEmail.setOnClickListener { sendEmail(txtEmail.text.toString()) }
+        imgAddress.setOnClickListener { sendAddress(txtAddress.text.toString()) }
+        imgPhonenumber.setOnClickListener { sendPhone(txtPhonenumber.text.toString()) }
+        imgWeb.setOnClickListener { sendWeb(txtWeb.text.toString()) }
+
+    }
+
+    private fun sendPhone(text: String) {
+        if (text.isValidPhone()) {
+            var intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:${text.trim()}"))
+            startActivity(intent)
+        } else {
+            txtPhonenumber.error = getString(R.string.profile_invalid_phonenumber)
+        }
+    }
+
+    private fun sendEmail(text: String) {
+        if (text.isValidEmail()) {
+            var intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                type = "text/plain"
+                putExtra(EXTRA_EMAIL, text)
+            }
+            startActivity(intent)
+        } else {
+            txtEmail.error = getString(R.string.profile_invalid_email)
+        }
+    }
+
+    private fun sendWeb(text: String) {
+        if (text.isValidUrl()) {
+            var intent = Intent().apply {
+                action = Intent.ACTION_WEB_SEARCH
+                putExtra(SearchManager.QUERY, text)
+            }
+            startActivity(intent)
+        } else {
+            txtWeb.error = getString(R.string.profile_invalid_web)
+        }
+    }
+
+    private fun sendAddress(text: String) {
+        if (text.isNotEmpty()) {
+            var intent = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=${text}"))
+            startActivity(intent)
+        } else {
+            txtAddress.error = getString(R.string.profile_invalid_address)
+        }
+    }
+
+
+    private fun setForm() {
+        txtName.setText(viewModel.name)
+        txtEmail.setText(viewModel.email)
+        txtPhonenumber.setText(viewModel.phoneNumber)
+        txtAddress.setText(viewModel.address)
+        txtWeb.setText(viewModel.web)
+        txtName.requestFocus()
+    }
+
+    private fun setAvatar() {
+        lblAvatar.setText(viewModel.avatar.name)
+        imgAvatar.setImageResource(viewModel.avatar.imageResId)
+    }
+
+    private fun goToAvatarActivity() {
+        var intention = Intent(this, AvatarActivity::class.java)
+        intention.putExtra(EXTRA_AVATAR, viewModel.avatar.id)
+
+        startActivityForResult(intention, REQUEST_AVATAR)
+
+        onActivityResult(REQUEST_AVATAR, Activity.RESULT_OK, intention)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == Activity.RESULT_OK) {
+            viewModel.avatar = Database.queryAllAvatars()[intent.getIntExtra(EXTRA_AVATAR, 0)]
+            setAvatar()
+        }
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.profile_activity, menu)
@@ -38,7 +137,32 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun save() {
-        // TODO
+        if (checkForm()) Toast.makeText(this, "Profile saved successfuly", Toast.LENGTH_LONG).show()
+    }
+
+    private fun checkForm(): Boolean {
+        if (txtName.text.isEmpty()) {
+            txtName.error = getString(R.string.profile_invalid_name)
+            return false
+        }
+        if (!txtEmail.text.toString().isValidEmail()) {
+            txtEmail.error = getString(R.string.profile_invalid_email)
+            return false
+        }
+        if (!txtPhonenumber.text.toString().isValidPhone()) {
+            txtPhonenumber.error = getString(R.string.profile_invalid_phonenumber)
+            return false
+        }
+        if (txtAddress.text.isEmpty()) {
+            txtAddress.error = getString(R.string.profile_invalid_address)
+            return false
+        }
+        if (!txtWeb.text.toString().isValidUrl()) {
+            txtWeb.error = getString(R.string.profile_invalid_web)
+            return false
+        }
+
+        return true
     }
 
 }
