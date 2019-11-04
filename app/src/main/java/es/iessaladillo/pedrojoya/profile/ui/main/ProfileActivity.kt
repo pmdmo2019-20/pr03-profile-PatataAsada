@@ -18,6 +18,7 @@ import es.iessaladillo.pedrojoya.profile.ui.avatar.AvatarActivity.Companion.EXTR
 import es.iessaladillo.pedrojoya.profile.utils.isValidEmail
 import es.iessaladillo.pedrojoya.profile.utils.isValidPhone
 import es.iessaladillo.pedrojoya.profile.utils.isValidUrl
+import es.iessaladillo.pedrojoya.profile.utils.toast
 import kotlinx.android.synthetic.main.profile_avatar.*
 import kotlinx.android.synthetic.main.profile_form.*
 
@@ -100,12 +101,12 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun setAvatar() {
-        lblAvatar.setText(viewModel.avatar.name)
+        lblAvatar.text = viewModel.avatar.name
         imgAvatar.setImageResource(viewModel.avatar.imageResId)
     }
 
     private fun goToAvatarActivity() {
-        var intention = Intent(this, AvatarActivity::class.java)
+        val intention = Intent(this, AvatarActivity::class.java)
         intention.putExtra(EXTRA_AVATAR, viewModel.avatar.id)
 
         startActivityForResult(intention, REQUEST_AVATAR)
@@ -137,7 +138,7 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun save() {
-        if (checkForm()) Toast.makeText(this, "Profile saved successfuly", Toast.LENGTH_LONG).show()
+        if (checkForm()) toast("Profile saved successfuly", Toast.LENGTH_LONG)
     }
 
     private fun checkForm(): Boolean {

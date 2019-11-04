@@ -74,79 +74,25 @@ class AvatarActivity : AppCompatActivity() {
     private fun markSelected(id: Int) {
         viewModel.id = id
         unMarkPrevious(viewModel.lastId)
-        changeCheckBoxState(viewModel.id)
+        changeCheckBoxState(viewModel.id, true)
     }
 
     private fun unMarkPrevious(lastId: Int) {
-        changeCheckBoxState(lastId)
+        changeCheckBoxState(lastId, false)
         viewModel.lastId = viewModel.id
     }
 
-    private fun changeCheckBoxState(id: Int) {
-        when (viewModel.id) {
-            1 -> {
-                if (chkAvatar1.isSelected) {
-                    chkAvatar1.isSelected = false
-                } else {
-                    chkAvatar1.isSelected = false
-                }
-            }
-            2 -> {
-                if (chkAvatar2.isSelected) {
-                    chkAvatar2.isSelected = false
-                } else {
-                    chkAvatar2.isSelected = false
-                }
-            }
-            3 -> {
-                if (chkAvatar3.isSelected) {
-                    chkAvatar3.isSelected = false
-                } else {
-                    chkAvatar3.isSelected = false
-                }
-            }
-            4 -> {
-                if (chkAvatar4.isSelected) {
-                    chkAvatar4.isSelected = false
-                } else {
-                    chkAvatar4.isSelected = false
-                }
-            }
-            5 -> {
-                if (chkAvatar5.isSelected) {
-                    chkAvatar5.isSelected = false
-                } else {
-                    chkAvatar5.isSelected = false
-                }
-            }
-            6 -> {
-                if (chkAvatar6.isSelected) {
-                    chkAvatar6.isSelected = false
-                } else {
-                    chkAvatar6.isSelected = false
-                }
-            }
-            7 -> {
-                if (chkAvatar7.isSelected) {
-                    chkAvatar7.isSelected = false
-                } else {
-                    chkAvatar7.isSelected = false
-                }
-            }
-            8 -> {
-                if (chkAvatar8.isSelected) {
-                    chkAvatar8.isSelected = false
-                } else {
-                    chkAvatar8.isSelected = false
-                }
-            }
-            9 -> {
-                if (chkAvatar9.isSelected) {
-                    chkAvatar9.isSelected = false
-                } else {
-                    chkAvatar9.isSelected = false
-                }
-            }
+    private fun changeCheckBoxState(id: Int, state: Boolean) {
+        when (id) {
+            1 -> chkAvatar1.isSelected = state
+            2 -> chkAvatar2.isSelected = state
+            3 -> chkAvatar3.isSelected = state
+            4 -> chkAvatar4.isSelected = state
+            5 -> chkAvatar5.isSelected = state
+            6 -> chkAvatar6.isSelected = state
+            7 -> chkAvatar7.isSelected = state
+            8 -> chkAvatar8.isSelected = state
+            9 -> chkAvatar9.isSelected = state
         }
     }
 
@@ -164,10 +110,10 @@ class AvatarActivity : AppCompatActivity() {
     }
 
     private fun sendAvatarId() {
-        var newintent = Intent(this, AvatarActivity::class.java)
-        newintent.putExtra(EXTRA_AVATAR,viewModel.id)
+        val newintent = Intent(this, AvatarActivity::class.java)
+        newintent.putExtra(EXTRA_AVATAR, viewModel.id)
 
-        setResult(Activity.RESULT_OK,newintent)
+        setResult(Activity.RESULT_OK, newintent)
 
     }
 
