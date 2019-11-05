@@ -84,15 +84,15 @@ class AvatarActivity : AppCompatActivity() {
 
     private fun changeCheckBoxState(id: Int, state: Boolean) {
         when (id) {
-            1 -> chkAvatar1.isSelected = state
-            2 -> chkAvatar2.isSelected = state
-            3 -> chkAvatar3.isSelected = state
-            4 -> chkAvatar4.isSelected = state
-            5 -> chkAvatar5.isSelected = state
-            6 -> chkAvatar6.isSelected = state
-            7 -> chkAvatar7.isSelected = state
-            8 -> chkAvatar8.isSelected = state
-            9 -> chkAvatar9.isSelected = state
+            1 -> chkAvatar1.isChecked = state
+            2 -> chkAvatar2.isChecked = state
+            3 -> chkAvatar3.isChecked = state
+            4 -> chkAvatar4.isChecked = state
+            5 -> chkAvatar5.isChecked = state
+            6 -> chkAvatar6.isChecked = state
+            7 -> chkAvatar7.isChecked = state
+            8 -> chkAvatar8.isChecked = state
+            9 -> chkAvatar9.isChecked = state
         }
     }
 

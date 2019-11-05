@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AAAA Clases-pr03-profile-PatataAsada-PR03-Profile.iml" filepath="$PROJECT_DIR$/AAAA Clases-pr03-profile-PatataAsada-PR03-Profile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/AAAA Clases-pr03-profile-PatataAsada-app.iml" filepath="$PROJECT_DIR$/app/AAAA Clases-pr03-profile-PatataAsada-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/PR03-Profile.iml" filepath="$PROJECT_DIR$/PR03-Profile.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/pr03-profile-PatataAsada-PR03-Profile.iml" filepath="$PROJECT_DIR$/pr03-profile-PatataAsada-PR03-Profile.iml" />
