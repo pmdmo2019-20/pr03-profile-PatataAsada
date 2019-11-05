@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgAvatar2"
+        android:id="@+id/imgAvatar4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="@string/portraitDimRatio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar3"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar7"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgAvatar1"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/cubone" />
 
     <TextView
-        android:id="@+id/lblAvatar2"
+        android:id="@+id/lblAvatar4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8F5C5C5C"
@@ -27,18 +27,18 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar2"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar2"
-        app:layout_constraintStart_toStartOf="@+id/imgAvatar2" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar4"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4"
+        app:layout_constraintStart_toStartOf="@+id/imgAvatar4" />
 
     <CheckBox
-        android:id="@+id/chkAvatar2"
+        android:id="@+id/chkAvatar4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar2"
-        app:layout_constraintTop_toTopOf="@+id/imgAvatar2" />
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4"
+        app:layout_constraintTop_toTopOf="@+id/imgAvatar4" />
 
     <ImageView
         android:id="@+id/imgAvatar1"
@@ -46,7 +46,7 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="@string/portraitDimRatio"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar2"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,18 +75,18 @@
         app:layout_constraintTop_toTopOf="@+id/imgAvatar1" />
 
     <ImageView
-        android:id="@+id/imgAvatar3"
+        android:id="@+id/imgAvatar7"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="@string/portraitDimRatio"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imgAvatar2"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar4"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/gyarados" />
 
     <TextView
-        android:id="@+id/lblAvatar3"
+        android:id="@+id/lblAvatar7"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8F5C5C5C"
@@ -94,21 +94,21 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar3"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar3"
-        app:layout_constraintStart_toStartOf="@+id/imgAvatar3" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar7"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar7"
+        app:layout_constraintStart_toStartOf="@+id/imgAvatar7" />
 
     <CheckBox
-        android:id="@+id/chkAvatar3"
+        android:id="@+id/chkAvatar7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar3"
-        app:layout_constraintTop_toTopOf="@+id/imgAvatar3" />
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar7"
+        app:layout_constraintTop_toTopOf="@+id/imgAvatar7" />
 
     <ImageView
-        android:id="@+id/imgAvatar4"
+        android:id="@+id/imgAvatar2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -120,7 +120,7 @@
         app:srcCompat="@drawable/bulbasur" />
 
     <TextView
-        android:id="@+id/lblAvatar4"
+        android:id="@+id/lblAvatar2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8F5C5C5C"
@@ -128,17 +128,17 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar4"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4"
-        app:layout_constraintStart_toStartOf="@+id/imgAvatar4" />
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar2"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar2"
+        app:layout_constraintStart_toStartOf="@+id/imgAvatar2" />
 
     <CheckBox
-        android:id="@+id/chkAvatar4"
+        android:id="@+id/chkAvatar2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar4"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar2"
         app:layout_constraintTop_toBottomOf="@+id/lblAvatar1" />
 
     <ImageView
@@ -147,10 +147,10 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintDimensionRatio="@string/portraitDimRatio"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar6"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar8"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgAvatar4"
-        app:layout_constraintTop_toBottomOf="@+id/imgAvatar2"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar2"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar4"
         app:srcCompat="@drawable/feebas" />
 
     <TextView
@@ -176,7 +176,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgAvatar5" />
 
     <ImageView
-        android:id="@+id/imgAvatar6"
+        android:id="@+id/imgAvatar8"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -184,11 +184,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgAvatar5"
-        app:layout_constraintTop_toBottomOf="@+id/imgAvatar3"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar7"
         app:srcCompat="@drawable/jigglypuff" />
 
     <TextView
-        android:id="@+id/lblAvatar6"
+        android:id="@+id/lblAvatar8"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#8F5C5C5C"
@@ -196,77 +196,8 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar6"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar6"
-        app:layout_constraintStart_toStartOf="@+id/imgAvatar6" />
-
-    <CheckBox
-        android:id="@+id/chkAvatar6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar6"
-        app:layout_constraintTop_toTopOf="@+id/imgAvatar6" />
-
-    <ImageView
-        android:id="@+id/imgAvatar7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="@string/portraitDimRatio"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar8"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgAvatar4"
-        app:srcCompat="@drawable/chikorita" />
-
-    <TextView
-        android:id="@+id/lblAvatar7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#8F5C5C5C"
-        android:text="@string/chikorita"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar7"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar7"
-        app:layout_constraintStart_toStartOf="@+id/imgAvatar7" />
-
-    <CheckBox
-        android:id="@+id/chkAvatar7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="@+id/imgAvatar7"
-        app:layout_constraintTop_toTopOf="@+id/imgAvatar7" />
-
-    <ImageView
-        android:id="@+id/imgAvatar8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintDimensionRatio="@string/portraitDimRatio"
-        app:layout_constraintEnd_toStartOf="@+id/imgAvatar9"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgAvatar7"
-        app:layout_constraintTop_toBottomOf="@+id/imgAvatar5"
-        app:srcCompat="@drawable/giratina" />
-
-    <TextView
-        android:id="@+id/lblAvatar8"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#8F5C5C5C"
-        android:text="@string/giratina"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgAvatar8"
         app:layout_constraintEnd_toEndOf="@+id/imgAvatar8"
-        app:layout_constraintStart_toEndOf="@+id/imgAvatar8"
         app:layout_constraintStart_toStartOf="@+id/imgAvatar8" />
 
     <CheckBox
@@ -279,6 +210,75 @@
         app:layout_constraintTop_toTopOf="@+id/imgAvatar8" />
 
     <ImageView
+        android:id="@+id/imgAvatar3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="@string/portraitDimRatio"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar2"
+        app:srcCompat="@drawable/chikorita" />
+
+    <TextView
+        android:id="@+id/lblAvatar3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#8F5C5C5C"
+        android:text="@string/chikorita"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar3"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar3"
+        app:layout_constraintStart_toStartOf="@+id/imgAvatar3" />
+
+    <CheckBox
+        android:id="@+id/chkAvatar3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar3"
+        app:layout_constraintTop_toTopOf="@+id/imgAvatar3" />
+
+    <ImageView
+        android:id="@+id/imgAvatar6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintDimensionRatio="@string/portraitDimRatio"
+        app:layout_constraintEnd_toStartOf="@+id/imgAvatar9"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar3"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar5"
+        app:srcCompat="@drawable/giratina" />
+
+    <TextView
+        android:id="@+id/lblAvatar6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#8F5C5C5C"
+        android:text="@string/giratina"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgAvatar6"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar6"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar6"
+        app:layout_constraintStart_toStartOf="@+id/imgAvatar6" />
+
+    <CheckBox
+        android:id="@+id/chkAvatar6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/imgAvatar6"
+        app:layout_constraintTop_toTopOf="@+id/imgAvatar6" />
+
+    <ImageView
         android:id="@+id/imgAvatar9"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -286,8 +286,8 @@
         app:layout_constraintDimensionRatio="@string/portraitDimRatio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imgAvatar8"
-        app:layout_constraintTop_toBottomOf="@+id/imgAvatar6"
+        app:layout_constraintStart_toEndOf="@+id/imgAvatar6"
+        app:layout_constraintTop_toBottomOf="@+id/imgAvatar8"
         app:srcCompat="@drawable/pachirisu" />
 
     <TextView

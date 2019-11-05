@@ -89,7 +89,7 @@ class ProfileActivityIntentTest {
 
     @Test
     fun shouldAvatarSendIntent() {
-        onView(withId(R.id.imgAvatar2)).perform(click())
+        onView(withId(R.id.imgAvatar4)).perform(click())
         // Check sending intent
         val avatar = Avatar(1, R.drawable.pikachu, "Pikachu")
         intended(
@@ -112,11 +112,11 @@ class ProfileActivityIntentTest {
         // We simulate the result intent.
         intending(hasComponent(AvatarActivity::class.java.name)).respondWith(result)
 
-        onView(withId(R.id.imgAvatar2)).perform(click())
+        onView(withId(R.id.imgAvatar4)).perform(click())
         // Check result set to views.
-        onView(withId(R.id.imgAvatar2))
+        onView(withId(R.id.imgAvatar4))
             .check(matches(DrawableMatcher(avatar.imageResId)))
-        onView(withId(R.id.lblAvatar2)).check(
+        onView(withId(R.id.lblAvatar4)).check(
             matches(withText(avatar.name))
         )
     }

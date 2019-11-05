@@ -24,41 +24,41 @@ class AvatarActivity : AppCompatActivity() {
     }
 
     private fun setClickListeners() {
-        imgAvatar1.setOnClickListener { markSelected(1) }
-        lblAvatar1.setOnClickListener { markSelected(1) }
-        chkAvatar1.setOnClickListener { markSelected(1) }
+        imgAvatar1.setOnClickListener { markSelected(0) }
+        lblAvatar1.setOnClickListener { markSelected(0) }
+        chkAvatar1.setOnClickListener { markSelected(0) }
 
-        imgAvatar2.setOnClickListener { markSelected(2) }
-        lblAvatar2.setOnClickListener { markSelected(2) }
-        chkAvatar2.setOnClickListener { markSelected(2) }
+        imgAvatar2.setOnClickListener { markSelected(1) }
+        lblAvatar2.setOnClickListener { markSelected(1) }
+        chkAvatar2.setOnClickListener { markSelected(1) }
 
-        imgAvatar3.setOnClickListener { markSelected(3) }
-        lblAvatar3.setOnClickListener { markSelected(3) }
-        chkAvatar3.setOnClickListener { markSelected(3) }
+        imgAvatar3.setOnClickListener { markSelected(2) }
+        lblAvatar3.setOnClickListener { markSelected(2) }
+        chkAvatar3.setOnClickListener { markSelected(2) }
 
-        imgAvatar4.setOnClickListener { markSelected(4) }
-        lblAvatar4.setOnClickListener { markSelected(4) }
-        chkAvatar4.setOnClickListener { markSelected(4) }
+        imgAvatar4.setOnClickListener { markSelected(3) }
+        lblAvatar4.setOnClickListener { markSelected(3) }
+        chkAvatar4.setOnClickListener { markSelected(3) }
 
-        imgAvatar5.setOnClickListener { markSelected(5) }
-        lblAvatar5.setOnClickListener { markSelected(5) }
-        chkAvatar5.setOnClickListener { markSelected(5) }
+        imgAvatar5.setOnClickListener { markSelected(4) }
+        lblAvatar5.setOnClickListener { markSelected(4) }
+        chkAvatar5.setOnClickListener { markSelected(4) }
 
-        imgAvatar6.setOnClickListener { markSelected(6) }
-        lblAvatar6.setOnClickListener { markSelected(6) }
-        chkAvatar6.setOnClickListener { markSelected(6) }
+        imgAvatar6.setOnClickListener { markSelected(5) }
+        lblAvatar6.setOnClickListener { markSelected(5) }
+        chkAvatar6.setOnClickListener { markSelected(5) }
 
-        imgAvatar7.setOnClickListener { markSelected(7) }
-        lblAvatar7.setOnClickListener { markSelected(7) }
-        chkAvatar7.setOnClickListener { markSelected(7) }
+        imgAvatar7.setOnClickListener { markSelected(6) }
+        lblAvatar7.setOnClickListener { markSelected(6) }
+        chkAvatar7.setOnClickListener { markSelected(6) }
 
-        imgAvatar8.setOnClickListener { markSelected(8) }
-        lblAvatar8.setOnClickListener { markSelected(8) }
-        chkAvatar8.setOnClickListener { markSelected(8) }
+        imgAvatar8.setOnClickListener { markSelected(7) }
+        lblAvatar8.setOnClickListener { markSelected(7) }
+        chkAvatar8.setOnClickListener { markSelected(7) }
 
-        imgAvatar9.setOnClickListener { markSelected(9) }
-        lblAvatar9.setOnClickListener { markSelected(9) }
-        chkAvatar9.setOnClickListener { markSelected(9) }
+        imgAvatar9.setOnClickListener { markSelected(8) }
+        lblAvatar9.setOnClickListener { markSelected(8) }
+        chkAvatar9.setOnClickListener { markSelected(8) }
 
     }
 
@@ -66,7 +66,7 @@ class AvatarActivity : AppCompatActivity() {
         if (intent == null || !intent.hasExtra(EXTRA_AVATAR)) {
             throw RuntimeException("No llega el intent")
         }
-        viewModel.id = intent.getIntExtra(EXTRA_AVATAR, 1)
+        viewModel.id = intent.getIntExtra(EXTRA_AVATAR, 1)-1
         viewModel.lastId = viewModel.id
         markSelected(viewModel.id)
     }
@@ -84,15 +84,15 @@ class AvatarActivity : AppCompatActivity() {
 
     private fun changeCheckBoxState(id: Int, state: Boolean) {
         when (id) {
-            1 -> chkAvatar1.isChecked = state
-            2 -> chkAvatar2.isChecked = state
-            3 -> chkAvatar3.isChecked = state
-            4 -> chkAvatar4.isChecked = state
-            5 -> chkAvatar5.isChecked = state
-            6 -> chkAvatar6.isChecked = state
-            7 -> chkAvatar7.isChecked = state
-            8 -> chkAvatar8.isChecked = state
-            9 -> chkAvatar9.isChecked = state
+            0 -> chkAvatar1.isChecked = state
+            1 -> chkAvatar2.isChecked = state
+            2 -> chkAvatar3.isChecked = state
+            3 -> chkAvatar4.isChecked = state
+            4 -> chkAvatar5.isChecked = state
+            5 -> chkAvatar6.isChecked = state
+            6 -> chkAvatar7.isChecked = state
+            7 -> chkAvatar8.isChecked = state
+            8 -> chkAvatar9.isChecked = state
         }
     }
 
@@ -110,16 +110,21 @@ class AvatarActivity : AppCompatActivity() {
     }
 
     private fun sendAvatarId() {
-        val newintent = Intent(this, AvatarActivity::class.java)
-        newintent.putExtra(EXTRA_AVATAR, viewModel.id)
+        setActivityResult()
+        finish()
+
+    }
+
+    private fun setActivityResult() {
+        val newintent = Intent().putExtra(EXTRA_AVATAR, viewModel.id)
 
         setResult(Activity.RESULT_OK, newintent)
-
     }
 
     companion object {
 
         const val EXTRA_AVATAR = "EXTRA_AVATAR"
+
 
     }
 

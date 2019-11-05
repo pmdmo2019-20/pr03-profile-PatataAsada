@@ -111,14 +111,14 @@ class ProfileActivity : AppCompatActivity() {
 
         startActivityForResult(intention, REQUEST_AVATAR)
 
-        onActivityResult(REQUEST_AVATAR, Activity.RESULT_OK, intention)
-
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == Activity.RESULT_OK) {
-            viewModel.avatar = Database.queryAllAvatars()[intent.getIntExtra(EXTRA_AVATAR, 0)]
+        if (requestCode == REQUEST_AVATAR && resultCode == Activity.RESULT_OK) {
+            if (data != null) {
+                viewModel.avatar = Database.queryAllAvatars()[data.getIntExtra(EXTRA_AVATAR, 1)]
+            }
             setAvatar()
         }
     }

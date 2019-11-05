@@ -38,31 +38,31 @@ class AvatarActivityTest {
 
     @Test
     fun shouldSelectReceivedAvatar() {
-        onView(withId(R.id.chkAvatar2))
+        onView(withId(R.id.chkAvatar4))
             .check(matches(isChecked()))
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView1Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar1, R.id.chkAvatar2)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar1, R.id.chkAvatar4)
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView2Clicked() {
         onView(withId(R.id.imgAvatar1)).perform(click())
-        onView(withId(R.id.imgAvatar2)).perform(click())
-        onView(withId(R.id.chkAvatar2)).check(matches(isChecked()))
-        onView(withId(R.id.chkAvatar2)).check(matches(not<View>(isChecked())))
+        onView(withId(R.id.imgAvatar4)).perform(click())
+        onView(withId(R.id.chkAvatar4)).check(matches(isChecked()))
+        onView(withId(R.id.chkAvatar4)).check(matches(not<View>(isChecked())))
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView3Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar3, R.id.chkAvatar3)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar7, R.id.chkAvatar7)
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView4Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar4, R.id.chkAvatar4)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar2, R.id.chkAvatar2)
     }
 
     @Test
@@ -72,17 +72,17 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChangeSelectionWhenImageView6Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar6, R.id.chkAvatar6)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar8, R.id.chkAvatar8)
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView7Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar7, R.id.chkAvatar7)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar3, R.id.chkAvatar3)
     }
 
     @Test
     fun shouldChangeSelectionWhenImageView8Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar8, R.id.chkAvatar8)
+        shouldChangeSelectionWhenViewClicked(R.id.imgAvatar6, R.id.chkAvatar6)
     }
 
     @Test
@@ -92,25 +92,25 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChangeSelectionWhenTextView1Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar1, R.id.chkAvatar2)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar1, R.id.chkAvatar4)
     }
 
     @Test
     fun shouldChangeSelectionWhenTextView2Clicked() {
         onView(withId(R.id.lblAvatar1)).perform(click())
-        onView(withId(R.id.lblAvatar2)).perform(click())
-        onView(withId(R.id.chkAvatar2)).check(matches(isChecked()))
-        onView(withId(R.id.chkAvatar2)).check(matches(not<View>(isChecked())))
+        onView(withId(R.id.lblAvatar4)).perform(click())
+        onView(withId(R.id.chkAvatar4)).check(matches(isChecked()))
+        onView(withId(R.id.chkAvatar4)).check(matches(not<View>(isChecked())))
     }
 
     @Test
     fun shouldChangeSelectionWhenTextView3Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar3, R.id.chkAvatar3)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar7, R.id.chkAvatar7)
     }
 
     @Test
     fun shouldChangeSelectionWhenTextView4Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar4, R.id.chkAvatar4)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar2, R.id.chkAvatar2)
     }
 
     @Test
@@ -120,17 +120,17 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChangeSelectionWhenTextView6Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar6, R.id.chkAvatar6)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar8, R.id.chkAvatar8)
     }
 
     @Test
     fun shouldChangeSelectionWhenTextView7Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar7, R.id.chkAvatar7)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar3, R.id.chkAvatar3)
     }
 
     @Test
     fun shouldChangeSelectionWhenTextView8Clicked() {
-        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar8, R.id.chkAvatar8)
+        shouldChangeSelectionWhenViewClicked(R.id.lblAvatar6, R.id.chkAvatar6)
     }
 
     @Test
@@ -141,28 +141,28 @@ class AvatarActivityTest {
     private fun shouldChangeSelectionWhenViewClicked(@IdRes clickedViewResId: Int, @IdRes selectedCheckBoxResId: Int) {
         onView(withId(clickedViewResId)).perform(click())
         onView(withId(selectedCheckBoxResId)).check(matches(isChecked()))
-        onView(withId(R.id.chkAvatar2)).check(matches(not<View>(isChecked())))
+        onView(withId(R.id.chkAvatar4)).check(matches(not<View>(isChecked())))
     }
 
     @Test
     fun shouldChkAvatar1KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar2)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar4)
     }
 
     @Test
     fun shouldChkAvatar2KeepCheckedWhenAlreadyChecked() {
-        onView(withId(R.id.chkAvatar2)).perform(click())
-        onView(withId(R.id.chkAvatar2)).check(matches(isChecked()))
+        onView(withId(R.id.chkAvatar4)).perform(click())
+        onView(withId(R.id.chkAvatar4)).check(matches(isChecked()))
     }
 
     @Test
     fun shouldChkAvatar3KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar3)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar7)
     }
 
     @Test
     fun shouldChkAvatar4KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar4)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar2)
     }
 
     @Test
@@ -172,17 +172,17 @@ class AvatarActivityTest {
 
     @Test
     fun shouldChkAvatar6KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar6)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar8)
     }
 
     @Test
     fun shouldChkAvatar7KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar7)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar3)
     }
 
     @Test
     fun shouldChkAvatar8KeepCheckedWhenAlreadyChecked() {
-        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar8)
+        shouldKeepCheckedWhenAlreadyChecked(R.id.chkAvatar6)
     }
 
     @Test

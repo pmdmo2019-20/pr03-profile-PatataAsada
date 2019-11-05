@@ -39,7 +39,7 @@ class AvatarActivityIntentTest {
 
     @Test
     fun shouldReturnAvatarWhenSelectMenuClicked() {
-        onView(withId(R.id.imgAvatar2)).perform(click())
+        onView(withId(R.id.imgAvatar4)).perform(click())
         onView(withId(R.id.mnuSelect)).perform(click())
         val resultCode = testRule.activityResult.resultCode
         val intent = testRule.activityResult.resultData
