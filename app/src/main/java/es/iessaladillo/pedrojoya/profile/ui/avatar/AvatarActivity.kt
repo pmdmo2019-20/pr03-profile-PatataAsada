@@ -8,6 +8,8 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import es.iessaladillo.pedrojoya.profile.R
+import es.iessaladillo.pedrojoya.profile.data.local.Database
+import es.iessaladillo.pedrojoya.profile.data.local.entity.Avatar
 import kotlinx.android.synthetic.main.avatar_activity.*
 
 class AvatarActivity : AppCompatActivity() {
@@ -66,7 +68,8 @@ class AvatarActivity : AppCompatActivity() {
         if (intent == null || !intent.hasExtra(EXTRA_AVATAR)) {
             throw RuntimeException("No llega el intent")
         }
-        viewModel.id = intent.getIntExtra(EXTRA_AVATAR, 1)-1
+        viewModel.avatar = intent.getParcelableExtra<Avatar>(EXTRA_AVATAR)
+        viewModel.id = viewModel.avatar.id-1
         viewModel.lastId = viewModel.id
         markSelected(viewModel.id)
     }
@@ -116,7 +119,7 @@ class AvatarActivity : AppCompatActivity() {
     }
 
     private fun setActivityResult() {
-        val newintent = Intent().putExtra(EXTRA_AVATAR, viewModel.id)
+        val newintent = Intent().putExtra(EXTRA_AVATAR, Database.queryAllAvatars()[viewModel.id])
 
         setResult(Activity.RESULT_OK, newintent)
     }
